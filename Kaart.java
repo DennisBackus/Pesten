@@ -9,14 +9,23 @@ public class Kaart {
 	public int getCard_id() {
 		return card_id;
 	}
+	public boolean isPestKaart = false; 	
+	
 	public void setCard_id(int card_id) {
 		this.card_id = card_id;
-		if(card_id == 11) {card_name = "Boer";}
-		else if(card_id == 12){card_name = "Koningin";}
-		else if(card_id == 13){card_name = "Koning";}
-		else if(card_id == 14){card_name = "Aas";}
-		else if(card_id == 15) {card_name = "Joker";}
-	}
+		if(card_id == 11) {card_name = "Boer";
+	isPestKaart = true; }
+		else if(card_id == 12){card_name = "Koningin";
+		}
+		else if(card_id == 13){card_name = "Koning";
+		isPestKaart = true; }
+		else if(card_id == 14){card_name = "Aas";  } //Aas richtingwissel niet relevant bij 2 spelers
+		else if(card_id == 15) {card_name = "Joker"; isPestKaart = true; }
+		else if(card_id ==2) {isPestKaart = true; }
+	else if(card_id ==7) {isPestKaart = true; }
+	else if(card_id ==8) {isPestKaart = true; }
+}
+	
 
 	public int getIcon_id() {
 		return icon_id;
@@ -36,6 +45,7 @@ public class Kaart {
 		if(card_id > 10 && card_id < 15) {
 			full_name = icon_name + " " + card_name;
 		}
+		
 		else if(card_id == 15) {
 			full_name = card_name;
 		}

@@ -67,9 +67,12 @@ public class Spel {
 		spelerZet = true;
 	}
 	public void kaartLeggen(Kaart kaart, Spelers speler) {
-		if(kaart.getCard_id() == pile.get(0).getCard_id() || kaart.getIcon_id() == pile.get(0).getIcon_id()) {
+		if((kaart.getCard_id() == pile.get(0).getCard_id() || kaart.getIcon_id() == pile.get(0).getIcon_id()) || kaart.isJoker) {
 			pile.add(0, kaart);
 			speler.hand.remove(speler.hand.indexOf(kaart));
+			if(pile.get(0).isPestKaart == true) {
+				pestKaart(pile.get(0)); 
+			}
 			spelerZet = true;
 
 		}
@@ -116,6 +119,20 @@ public class Spel {
 		}
 	}
 
+	public void pestKaart(Kaart kaart) {
+		switch(kaart.getCard_id()) {
+		case 2: 
+			if(speleraandeBeurt.equals(spelerEen) ) { 
+				neemKaart(spelerTwee);
+				neemKaart(spelerTwee);
+				System.out.println("Doordat er een 2 is gespeeld, pakte "+ spelerTwee.spelerNaam +" twee kaarten ");}
+			else{ 
+				neemKaart(spelerEen);
+				neemKaart(spelerEen);
+				System.out.println("Doordat er een 2 is gespeeld, pakte "+ spelerEen.spelerNaam +" twee kaarten ");}
+			
+		}
+	}
 	public int userInput() {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
