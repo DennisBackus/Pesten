@@ -16,6 +16,7 @@ public void setCard_id(int card_id) {
 	else if(card_id == 12){card_name = "Koningin";}
 	else if(card_id == 13){card_name = "Koning";}
 	else if(card_id == 14){card_name = "Aas";}
+	else if(card_id == 15) {card_name = "Joker";}
 }
 
 public int getIcon_id() {
@@ -33,8 +34,11 @@ public void setIcon_id(int icon_id) {
 }
 
 public String getFullCard_name() {
-	if(card_id > 10) {
+	if(card_id > 10 && card_id < 15) {
 	full_name = icon_name + " " + card_name;
+	}
+	else if(card_id == 15) {
+		full_name = card_name;
 	}
 	else {
 		full_name = icon_name + " " + card_id;
