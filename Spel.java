@@ -130,7 +130,23 @@ public class Spel {
 				neemKaart(spelerEen);
 				neemKaart(spelerEen);
 				System.out.println("Doordat er een 2 is gespeeld, pakte "+ spelerEen.spelerNaam +" twee kaarten ");}
-			
+			break;
+		case 15:
+			if(speleraandeBeurt.equals(spelerEen) ) { 
+				neemKaart(spelerTwee);
+				neemKaart(spelerTwee);
+				neemKaart(spelerTwee);
+				neemKaart(spelerTwee);
+				neemKaart(spelerTwee);
+				System.out.println("Doordat er een Joker is gespeeld, pakte "+ spelerTwee.spelerNaam +" vijf kaarten ");}
+			else{ 
+				neemKaart(spelerEen);
+				neemKaart(spelerEen);
+				neemKaart(spelerEen);
+				neemKaart(spelerEen);
+				neemKaart(spelerEen);
+				System.out.println("Doordat er een Joker is gespeeld, pakte "+ spelerEen.spelerNaam +" vijf kaarten ");}
+			break;
 		}
 	}
 	public int userInput() {
