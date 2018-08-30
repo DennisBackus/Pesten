@@ -67,7 +67,7 @@ public class Spel {
 		spelerZet = true;
 	}
 	public void kaartLeggen(Kaart kaart, Spelers speler) {
-		if((kaart.getCard_id() == pile.get(0).getCard_id() || kaart.getIcon_id() == pile.get(0).getIcon_id()) || kaart.isJoker) {
+		if(((kaart.getCard_id() == pile.get(0).getCard_id() || kaart.getIcon_id() == pile.get(0).getIcon_id()) || kaart.isJoker) || pile.get(0).isJoker) {
 			pile.add(0, kaart);
 			speler.hand.remove(speler.hand.indexOf(kaart));
 			if(pile.get(0).isPestKaart == true) {
